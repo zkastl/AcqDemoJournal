@@ -12,31 +12,26 @@ namespace AcqDemoJournal.ViewModel
             get { return ObservableGet<string>(); }
             set { ObservableSet(value); }
         }
-
         public string ResultText
         {
             get { return ObservableGet<string>(); }
             set { ObservableSet(value); }
         }
-
         public string ImpactText
         {
             get { return ObservableGet<string>(); }
             set { ObservableSet(value); }
         }
-
         public string CommentText
         {
             get { return ObservableGet<string>(); }
             set { ObservableSet(value); }
         }
-
         public string ErrorText
         {
             get { return ObservableGet<string>(); }
             set { ObservableSet(value); }
         }
-
         public bool ProblemSolvingCB
         {
             get { return ObservableGet<bool>(); }

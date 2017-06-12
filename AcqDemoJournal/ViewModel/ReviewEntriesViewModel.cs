@@ -14,7 +14,6 @@ namespace AcqDemoJournal.ViewModel
         }
 
         public string loadedJournalName;
-        private DateTime lastModified;
         private AssessmentPeriod asp;
 
         public ReviewEntriesViewModel()
@@ -26,7 +25,12 @@ namespace AcqDemoJournal.ViewModel
 
         public void LoadJournal(string journal)
         {
-            try { JournalEntries = new ObservableCollection<AcqDemoJournalEntry>(SerializationUtilities.DeserializeContract<AssessmentPeriod>(journal)?.PeriodEntries ?? new System.Collections.Generic.List<AcqDemoJournalEntry>()); }
+            try
+            {
+                JournalEntries = new ObservableCollection<AcqDemoJournalEntry>(
+                SerializationUtilities.DeserializeContract<AssessmentPeriod>(journal)?.PeriodEntries ??
+                new System.Collections.Generic.List<AcqDemoJournalEntry>());
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
