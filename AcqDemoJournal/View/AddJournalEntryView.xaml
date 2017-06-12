@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="AcqDemoJournal.View.AddJournalEntryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:AcqDemoJournal.Controls"
+             mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="1024"
+             Margin="20">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <controls:CriEntryControl 
+                    Grid.Row="0"
+                    CriLabelText="Contribution: What was the contribution made to the organization?" 
+                    CriContentText="{Binding ContributionText, Mode=TwoWay}" />
+            <controls:CriEntryControl
+                    Grid.Row="1"
+                    CriLabelText="Result: What was the result of that contribution?" 
+                    CriContentText="{Binding ResultText, Mode=TwoWay}" />
+            <controls:CriEntryControl
+                    Grid.Row="2"
+                    CriLabelText="Impact: What was the quantifiable impact as a result of that contribution?"
+                    CriContentText="{Binding ImpactText, Mode=TwoWay}" />
+            <TextBlock
+                    Grid.Row="3"
+                    HorizontalAlignment="Center"
+                    Foreground="Red"
+                    Text="{Binding ErrorText}" />
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <controls:ContributionFactorControl
+                        FactorLabelText="Problem Solving" 
+                        BoxChecked="{Binding ProblemSolvingCB, Mode=TwoWay}" />
+                <controls:ContributionFactorControl 
+                        FactorLabelText="Teamwork and Cooperation" 
+                        BoxChecked="{Binding TeamworkAndCooperationCB, Mode=TwoWay}"/>
+                <controls:ContributionFactorControl 
+                        FactorLabelText="Customer Relations" 
+                        BoxChecked="{Binding CustomerRelationsCB, Mode=TwoWay}" />
+                <controls:ContributionFactorControl 
+                        FactorLabelText="Leadership and Supervision"
+                        BoxChecked="{Binding LeadershipAndSupervisionCB, Mode=TwoWay}" />
+                <controls:ContributionFactorControl 
+                        FactorLabelText="Communication" 
+                        BoxChecked="{Binding CommunicationCB, Mode=TwoWay}" />
+                <controls:ContributionFactorControl 
+                        FactorLabelText="Resource Management" 
+                        BoxChecked="{Binding ResourceManagmentCB, Mode=TwoWay}" />
+            </StackPanel>
+            <Button Grid.Row="1"
+                    Name="button1"
+                    Width="150" Height="60"
+                    FontSize="16"
+                    Command="{Binding AddEntryCommand}" 
+                    Content="Add Journal Entry" 
+                    Click="button1_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>
