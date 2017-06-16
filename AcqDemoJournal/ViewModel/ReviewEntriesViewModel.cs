@@ -9,8 +9,8 @@ namespace AcqDemoJournal.ViewModel
     {
         public ObservableCollection<AcqDemoJournalEntry> JournalEntries
         {
-            get { return ObservableGet<ObservableCollection<AcqDemoJournalEntry>>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<ObservableCollection<AcqDemoJournalEntry>>();
+            set => ObservableSet(value);
         }
 
         public string loadedJournalName;

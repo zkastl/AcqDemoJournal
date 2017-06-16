@@ -9,58 +9,58 @@ namespace AcqDemoJournal.ViewModel
     {        
         public string ContributionText
         {
-            get { return ObservableGet<string>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<string>(); 
+            set => ObservableSet(value);
         }
         public string ResultText
         {
-            get { return ObservableGet<string>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<string>();
+            set => ObservableSet(value);
         }
         public string ImpactText
         {
-            get { return ObservableGet<string>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<string>();
+            set => ObservableSet(value);
         }
         public string CommentText
         {
-            get { return ObservableGet<string>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<string>();
+            set => ObservableSet(value);
         }
         public string ErrorText
         {
-            get { return ObservableGet<string>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<string>();
+            set => ObservableSet(value);
         }
         public bool ProblemSolvingCB
         {
-            get { return ObservableGet<bool>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<bool>();
+            set => ObservableSet(value);
         }
         public bool TeamworkAndCooperationCB
         {
-            get { return ObservableGet<bool>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<bool>();
+            set => ObservableSet(value);
         }
         public bool CustomerRelationsCB
         {
-            get { return ObservableGet<bool>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<bool>();
+            set => ObservableSet(value);
         }
         public bool LeadershipAndSupervisionCB
         {
-            get { return ObservableGet<bool>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<bool>();
+            set => ObservableSet(value);
         }
         public bool CommunicationCB
         {
-            get { return ObservableGet<bool>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<bool>();
+            set => ObservableSet(value);
         }
         public bool ResourceManagmentCB
         {
-            get { return ObservableGet<bool>(); }
-            set { ObservableSet(value); }
+            get => ObservableGet<bool>();
+            set => ObservableSet(value);
         }
         public ICommand AddEntryCommand { get; set; }
 
@@ -84,7 +84,7 @@ namespace AcqDemoJournal.ViewModel
             }
 
             AssessmentPeriod asp = SerializationUtilities.DeserializeContract<AssessmentPeriod>(defaultSerializedPath) ??
-                new AssessmentPeriod(DateTime.Now, new DateTime(2017, 12, 31, 11, 59, 59), 67, "No plan; just wingin' it.");
+                new AssessmentPeriod(DateTime.Now, new DateTime(DateTime.Now.Year, 9, 30), 67, "No plan; just wingin' it.");
 
 
             asp.PeriodEntries.Add(new AcqDemoJournalEntry(ContributionText, ResultText, ImpactText, null, GetFactors()));
@@ -93,15 +93,12 @@ namespace AcqDemoJournal.ViewModel
             ClearView();
         }
 
-        private bool InvalidJournalEntry()
-        {
-            return
+        private bool InvalidJournalEntry() =>
                 string.IsNullOrEmpty(ContributionText) ||
                 string.IsNullOrEmpty(ResultText) ||
                 string.IsNullOrEmpty(ImpactText) ||
                 !(CommunicationCB || CustomerRelationsCB || LeadershipAndSupervisionCB ||
                 ProblemSolvingCB || ResourceManagmentCB || TeamworkAndCooperationCB);
-        }
 
         private void ClearView()
         {            
