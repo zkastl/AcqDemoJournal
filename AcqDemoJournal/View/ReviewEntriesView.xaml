@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             mc:Ignorable="d" Margin="20"
+             mc:Ignorable="d" Margin="5"
              d:DesignHeight="768" d:DesignWidth="1024" Loaded="ReviewEntriesView_Loaded">
     <DataGrid ItemsSource="{Binding JournalEntries}" FontSize="14" FontWeight="Normal"
               FontFamily="Calibri" MinRowHeight="50" AlternatingRowBackground="LightGray" 
