@@ -69,5 +69,15 @@ namespace AcqDemoJournal.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon journal_acqdemo {
+            get {
+                object obj = ResourceManager.GetObject("journal_acqdemo", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

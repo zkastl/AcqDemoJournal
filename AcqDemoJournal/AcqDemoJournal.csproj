@@ -37,7 +37,7 @@
     <StartupObject>AcqDemoJournal.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\journal.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\journal_acqdemo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -142,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\journal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\journal_acqdemo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
