@@ -67,7 +67,7 @@
                     FontSize="16"
                     Command="{Binding AddEntryCommand}" 
                     Content="Add Journal Entry" 
-                    Click="button1_Click"/>
+                    Click="Button1_Click"/>
         </Grid>
     </Grid>
 </UserControl>

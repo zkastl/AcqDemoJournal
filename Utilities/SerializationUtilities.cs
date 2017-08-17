@@ -28,8 +28,7 @@ namespace Utilities
 
             try
             {
-                using (FileStream fs = new FileStream(fileName, FileMode.Open))
-                using (XmlReader reader = XmlReader.Create(fs, settings))
+                using (XmlReader reader = XmlReader.Create(new FileStream(fileName, FileMode.Open), settings))
                     return (T)deserializer.ReadObject(reader);
             }
             catch (FileNotFoundException)

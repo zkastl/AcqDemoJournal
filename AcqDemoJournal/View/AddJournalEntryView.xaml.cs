@@ -17,7 +17,7 @@ namespace AcqDemoJournal.View
             DataContext = ajevm;
         }
 
-        private void button1_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void Button1_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             button1.Command = ajevm.AddEntryCommand;
         }

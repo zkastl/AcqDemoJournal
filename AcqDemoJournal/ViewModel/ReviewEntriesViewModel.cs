@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows.Forms;
 using Utilities;
 
@@ -13,22 +14,21 @@ namespace AcqDemoJournal.ViewModel
             set => ObservableSet(value);
         }
 
-        public string loadedJournalName;
-        private AssessmentPeriod asp;
-
         public ReviewEntriesViewModel()
         {
-            loadedJournalName = @".\serializedJournal.jrl";
-            asp = SerializationUtilities.DeserializeContract<AssessmentPeriod>(loadedJournalName);
-            LoadJournal(loadedJournalName);
+            LoadJournal();
         }
 
-        public void LoadJournal(string journal)
+        public void LoadJournal()
         {
+            // Create the journal file if it doesn't exist
+            Directory.CreateDirectory(Constants.JournalDirectory);
+
+            // Deserialize and read in the journal file.
             try
             {
                 JournalEntries = new ObservableCollection<AcqDemoJournalEntry>(
-                SerializationUtilities.DeserializeContract<AssessmentPeriod>(journal)?.PeriodEntries ??
+                SerializationUtilities.DeserializeContract<AssessmentPeriod>(Constants.JournalDirectory + Constants.JournalFileName)?.PeriodEntries ??
                 new System.Collections.Generic.List<AcqDemoJournalEntry>());
             }
             catch (Exception ex)

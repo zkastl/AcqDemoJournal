@@ -19,7 +19,7 @@ namespace AcqDemoJournal.View
 
         private void ReviewEntriesView_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            revm.LoadJournal(revm.loadedJournalName);
+            revm.LoadJournal();
         }
     }
 }

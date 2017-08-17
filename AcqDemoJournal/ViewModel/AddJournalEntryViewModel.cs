@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AcqDemoJournal.Properties;
+using System;
 using System.Collections.Generic;
 using System.Windows.Input;
 using Utilities;
@@ -64,14 +65,12 @@ namespace AcqDemoJournal.ViewModel
         }
         public ICommand AddEntryCommand { get; set; }
 
-        private string defaultSerializedPath = @".\serializedJournal.jrl";
-
         public AddJournalEntryViewModel()
         {
             ProblemSolvingCB = TeamworkAndCooperationCB = 
             CustomerRelationsCB = LeadershipAndSupervisionCB =
             CommunicationCB = ResourceManagmentCB = false;
-
+            
             AddEntryCommand = new ProtoSyncCommand(WriteEntryToXml);
         }
 
@@ -83,12 +82,11 @@ namespace AcqDemoJournal.ViewModel
                 return;
             }
 
-            AssessmentPeriod asp = SerializationUtilities.DeserializeContract<AssessmentPeriod>(defaultSerializedPath) ??
+            AssessmentPeriod asp = SerializationUtilities.DeserializeContract<AssessmentPeriod>(Constants.JournalDirectory + Constants.JournalFileName) ??
                 new AssessmentPeriod(DateTime.Now, new DateTime(DateTime.Now.Year, 9, 30), 67, "No plan; just wingin' it.");
 
-
             asp.PeriodEntries.Add(new AcqDemoJournalEntry(ContributionText, ResultText, ImpactText, null, GetFactors()));
-            asp.SerializeContract(defaultSerializedPath);
+            asp.SerializeContract(Constants.JournalDirectory + Constants.JournalFileName);
 
             ClearView();
         }

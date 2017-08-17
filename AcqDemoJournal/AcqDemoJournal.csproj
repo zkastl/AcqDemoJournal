@@ -62,6 +62,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\AcqDemoJournalEntry.cs" />
     <Compile Include="Model\AssessmentPeriod.cs" />
+    <Compile Include="Model\Constants.cs" />
     <Compile Include="ViewModel\AddJournalEntryViewModel.cs" />
     <Compile Include="ViewModel\ReviewEntriesViewModel.cs" />
     <Compile Include="View\AddJournalEntryView.xaml.cs">
