@@ -16,7 +16,6 @@ namespace AcqDemoJournal.ViewModel
 
         public ReviewEntriesViewModel()
         {
-            LoadJournal();
         }
 
         public void LoadJournal()
