@@ -8,9 +8,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AcqDemoJournal")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("An app to record contributions for entry into AcqDemo")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Zak Kastl")]
 [assembly: AssemblyProduct("AcqDemoJournal")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
